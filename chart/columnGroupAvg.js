@@ -513,8 +513,14 @@ var Chart = BaseChart.extend ({
 					if (err) {
 						return cb (err);
 					};
-					me.zip.load (data);
-					cb ();
+
+					// me.zip.load (data);
+					// cb ();
+
+					me.zip.loadAsync (data).then(function(){
+						cb ();
+					});
+
 				});
 			},
 			function (cb) {
@@ -536,8 +542,14 @@ var Chart = BaseChart.extend ({
 			if (err) {
 				return cb (new VError (err, "build"));
 			}
-			var result = me.zip.generate ({type: me.type});
-			cb (null, result);
+
+			// var result = me.zip.generate ({type: me.type});
+			// cb (null, result);
+
+			me.zip.generateAsync ({type: me.type}).then(function(result){
+				cb (null, result);
+			});
+
 		});
 	}
 });
