@@ -31,9 +31,9 @@ var Chart = Backbone.Model.extend({
         var builder = new xml2js.Builder();
         var xml = builder.buildObject(opts.object);
 
-        // me.zip.file (opts.file, new Buffer (xml), {base64: true});
-        me.zip.file(opts.file, new Buffer(xml)).async("base64").then(function (content) {
-        });
+        me.zip.file (opts.file, new Buffer (xml), {base64: true});
+        // me.zip.file(opts.file, new Buffer(xml)).async("base64").then(function (content) {
+        // });
     },
     /*
         Get column name
